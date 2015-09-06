@@ -1,0 +1,40 @@
+{
+total: 1,
+movies: [
+         {
+         id: "771377309",
+         title: "The Incredibles 2",
+         year: 2017,
+         mpaa_rating: "Unrated",
+         runtime: "",
+         release_dates: { },
+         ratings: {
+         critics_score: -1,
+         audience_score: 100
+         },
+         synopsis: "",
+         posters: {
+         thumbnail: "http://resizing.flixster.com/BaF4eJiN1L_p38t075YYF_oIIF8=/52x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/19/94/11199467_ori.jpg",
+         profile: "http://resizing.flixster.com/BaF4eJiN1L_p38t075YYF_oIIF8=/52x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/19/94/11199467_ori.jpg",
+         detailed: "http://resizing.flixster.com/BaF4eJiN1L_p38t075YYF_oIIF8=/52x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/19/94/11199467_ori.jpg",
+         original: "http://resizing.flixster.com/BaF4eJiN1L_p38t075YYF_oIIF8=/52x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/19/94/11199467_ori.jpg"
+         },
+         abridged_cast: [ ],
+         alternate_ids: {
+         imdb: "3606756"
+         },
+         links: {
+         self: "http://api.rottentomatoes.com/api/public/v1.0/movies/771377309.json",
+         alternate: "http://www.rottentomatoes.com/m/the_incredibles_2/",
+         cast: "http://api.rottentomatoes.com/api/public/v1.0/movies/771377309/cast.json",
+         reviews: "http://api.rottentomatoes.com/api/public/v1.0/movies/771377309/reviews.json",
+         similar: "http://api.rottentomatoes.com/api/public/v1.0/movies/771377309/similar.json"
+         }
+         }
+         ],
+links: {
+self: "http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=The+Incredibles+II&page_limit=30&page=1"
+},
+link_template: "http://api.rottentomatoes.com/api/public/v1.0/movies.json?q={search-term}&page_limit={results-per-page}&page={page-number}"
+    
+}

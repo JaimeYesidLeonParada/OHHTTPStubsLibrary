@@ -1,0 +1,6 @@
+framework module Pods_OHHTTPHermeticServer {
+  umbrella header "Pods-OHHTTPHermeticServer-umbrella.h"
+
+  export *
+  module * { export * }
+}
