@@ -20,12 +20,15 @@ class ViewController: UIViewController {
         
         //OHHTTPManager.sharedInstance.startHermeticServerString("2.bp.blogspot.com", string: "Donald Duck")
         
-        let mickey : UIImage = UIImage(named: "Mickey")!
+        //let mickey : UIImage = UIImage(named: "Mickey")!
         
         /*
         OHHTTPManager.sharedInstance.startHermeticServerURLImage("http://2.bp.blogspot.com/-rZCJctudjVc/T744Uxgi4gI/AAAAAAAAA8o/PPF2lIoZ4EU/s1600/disney~donaldduck~danetta.png", image: mickey)
         */
-        OHHTTPManager.sharedInstance.startHermeticServerJSON("", url: "", endPoint:"q=Toy+Story+3",pathForFile: "Incredibles.json")
+        //OHHTTPManager.sharedInstance.startHermeticServerJSON("", url: "", endPoint:"q=Toy+Story+3",pathForFile: "Incredibles.json")
+        
+        OHHTTPManager.sharedInstance.startHermeticServerJSONWithContainsURL("q=Toy+Story+3", pathForFile: "Incredibles.json", statusCode: 200)
+        
         
        // OHHTTPManager.sharedInstance.startHermeticServerURLImage("http://2.bp.blogspot.com/-rZCJctudjVc/T744Uxgi4gI/AAAAAAAAA8o/PPF2lIoZ4EU/s1600/disney~donaldduck~danetta.png", image: mickey)
         

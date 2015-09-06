@@ -27,18 +27,14 @@ class OHHTTPManager: NSObject {
     }
     
     //MARK:Private General Hermetic---
-    private func startHermeticServer(host:String, url:String, endPoint:String ,data:NSData)
+    private func startHermeticServer(url:String, endPoint:String ,data:NSData)
     {
         OHHTTPStubs.stubRequestsPassingTest({(request: NSURLRequest!) in
             
             if !(endPoint.isEmpty)
             {
-                return self.predicateWithEndPoint(endPoint, request: request)
-            }
-            
-            if !(host.isEmpty)
-            {
-                return request.URL!.host == host ? true : false
+                let predicateValide = self.predicateWithEndPoint(endPoint, request: request) as Bool
+                return (predicateValide == true) ? true : false
             }
             else if !(url.isEmpty)
             {
@@ -55,55 +51,38 @@ class OHHTTPManager: NSObject {
         })
     }
     
-    //MARK:Host---
-    func startHermeticServerHostData(host:String, data:NSData)
-    {
-        self.startHermeticServer(host, url: "", endPoint: "", data: data)
-    }
-    
-    func startHermeticServerHostString(host:String, string:String)
-    {
-        let data : NSData = string.dataUsingEncoding(NSUTF8StringEncoding)!
-        self.startHermeticServer(host, url: "", endPoint: "", data: data)
-    }
-    
-    func startHermeticServerHostImage(host:String, image:UIImage)
-    {
-        let data : NSData = UIImageJPEGRepresentation(image, 1.0)!
-        self.startHermeticServer(host, url: "", endPoint: "",data: data)
-    }
-    
     //MARK:URL---
     func startHermeticServerURLData(url:String, data:NSData)
     {
-        self.startHermeticServer("", url: url, endPoint: "",data: data)
+        self.startHermeticServer(url, endPoint: "",data: data)
     }
     
     func startHermeticServerURLString(url:String, string:String)
     {
         let data : NSData = string.dataUsingEncoding(NSUTF8StringEncoding)!
-        self.startHermeticServer("", url: url, endPoint: "", data: data)
+        self.startHermeticServer(url, endPoint: "", data: data)
     }
     
     func startHermeticServerURLImage(url:String, image:UIImage)
     {
         let data : NSData = UIImageJPEGRepresentation(image, 1.0)!
-        self.startHermeticServer("", url: url, endPoint: "",data: data)
+        self.startHermeticServer(url, endPoint: "",data: data)
     }
     
     //MARK:URL---
-    func startHermeticServerJSON(host:String, url:String, endPoint:String, pathForFile:String)
+    private func startHermeticServerJSON(url:String, endPoint:String, containsURL:String, pathForFile:String, statusCode: Int32)
     {
         OHHTTPStubs.stubRequestsPassingTest({(request: NSURLRequest!) in
             
             if !(endPoint.isEmpty)
             {
-                return self.predicateWithEndPoint(endPoint, request: request)
+                let predicateValide = self.predicateWithEndPoint(endPoint, request: request) as Bool
+                return (predicateValide == true) ? true : false
             }
-            
-            if !(host.isEmpty)
+            else if !(containsURL.isEmpty)
             {
-                return request.URL!.host == host ? true : false
+                let predicateValide = self.predicateWithURLContains(containsURL, request: request) as Bool
+                return (predicateValide == true) ? true : false
             }
             else if !(url.isEmpty)
             {
@@ -116,15 +95,36 @@ class OHHTTPManager: NSObject {
             
             }, withStubResponse: { _ in
                 let stubPath = OHPathForFile(pathForFile, self.dynamicType)
-                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: 200, headers: ["Content-Type":"application/json"])
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: statusCode, headers: ["Content-Type":"application/json"])
         })
     }
     
+    func startHermeticServerJSONWithURL(url:String, pathForFile:String, statusCode:Int32)
+    {
+        self.startHermeticServerJSON(url, endPoint: "", containsURL: "", pathForFile: pathForFile, statusCode: statusCode)
+    }
     
-    func predicateWithEndPoint(endPoint:String , request:NSURLRequest) -> Bool
+    func startHermeticServerJSONWithEndpoint(endPoint:String, pathForFile:String, statusCode:Int32)
+    {
+        self.startHermeticServerJSON("", endPoint: endPoint, containsURL: "", pathForFile: pathForFile, statusCode: statusCode)
+    }
+    
+    func startHermeticServerJSONWithContainsURL(containsURL:String, pathForFile:String, statusCode:Int32)
+    {
+        self.startHermeticServerJSON("", endPoint: "", containsURL: containsURL, pathForFile: pathForFile, statusCode: statusCode)
+    }
+    
+    
+    private func predicateWithEndPoint(endPoint:String , request:NSURLRequest) -> Bool
     {
         let predicate = NSPredicate(format: "SELF ENDSWITH %@", endPoint)
         return predicate.evaluateWithObject(request.URL!.relativePath!) as Bool
+    }
+    
+    private func predicateWithURLContains(containsURL:String , request:NSURLRequest) -> Bool
+    {
+        let predicate = NSPredicate(format: "SELF CONTAINS %@", containsURL)
+        return predicate.evaluateWithObject(request.URL!.absoluteString) as Bool
     }
     
 }
