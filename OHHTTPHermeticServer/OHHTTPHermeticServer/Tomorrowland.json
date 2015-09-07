@@ -1,0 +1,80 @@
+{
+total: 1,
+movies: [
+         {
+         id: "771306778",
+         title: "Tomorrowland",
+         year: 2015,
+         mpaa_rating: "PG",
+         runtime: 107,
+         critics_consensus: "",
+         release_dates: {
+         theater: "2015-05-22"
+         },
+         ratings: {
+         critics_rating: "Rotten",
+         critics_score: 50,
+         audience_rating: "Spilled",
+         audience_score: 53
+         },
+         synopsis: "From Disney comes two-time Oscar (R) winner Brad Bird's riveting, mystery adventure "Tomorrowland," starring Academy Award (R) winner George Clooney. Bound by a shared destiny, former boy-genius Frank (Clooney), jaded by disillusionment, and Casey (Britt Robertson), a bright, optimistic teen bursting with scientific curiosity, embark on a danger-filled mission to unearth the secrets of an enigmatic place somewhere in time and space known only as "Tomorrowland." What they must do there changes the world-and them-forever. Featuring a screenplay by "Lost" writer and co-creator Damon Lindelof and Brad Bird, from a story by Lindelof & Bird & Jeff Jensen, "Tomorrowland" promises to take audiences on a thrill ride of nonstop adventures through new dimensions that have only been dreamed of.(C) Walt Disney",
+         posters: {
+         thumbnail: "http://resizing.flixster.com/NfvLf1FYf6Y4CUpWOYIFj63wQTc=/54x80/dkpu1ddg7pbsk.cloudfront.net/movie/11/19/06/11190666_ori.jpg",
+         profile: "http://resizing.flixster.com/NfvLf1FYf6Y4CUpWOYIFj63wQTc=/54x80/dkpu1ddg7pbsk.cloudfront.net/movie/11/19/06/11190666_ori.jpg",
+         detailed: "http://resizing.flixster.com/NfvLf1FYf6Y4CUpWOYIFj63wQTc=/54x80/dkpu1ddg7pbsk.cloudfront.net/movie/11/19/06/11190666_ori.jpg",
+         original: "http://resizing.flixster.com/NfvLf1FYf6Y4CUpWOYIFj63wQTc=/54x80/dkpu1ddg7pbsk.cloudfront.net/movie/11/19/06/11190666_ori.jpg"
+         },
+         abridged_cast: [
+                         {
+                         name: "George Clooney",
+                         id: "162654528",
+                         characters: [
+                                      "Frank"
+                                      ]
+                         },
+                         {
+                         name: "Hugh Laurie",
+                         id: "162746075",
+                         characters: [
+                                      "David Nix"
+                                      ]
+                         },
+                         {
+                         name: "Brittany Robertson",
+                         id: "770687068",
+                         characters: [
+                                      "Casey"
+                                      ]
+                         },
+                         {
+                         name: "Raffey Cassidy",
+                         id: "771407744",
+                         characters: [
+                                      "Athena"
+                                      ]
+                         },
+                         {
+                         name: "Thomas Robinson",
+                         id: "770842741",
+                         characters: [
+                                      "Young Frank Walker"
+                                      ]
+                         }
+                         ],
+         alternate_ids: {
+         imdb: "1964418"
+         },
+         links: {
+         self: "http://api.rottentomatoes.com/api/public/v1.0/movies/771306778.json",
+         alternate: "http://www.rottentomatoes.com/m/tomorrowland_2015/",
+         cast: "http://api.rottentomatoes.com/api/public/v1.0/movies/771306778/cast.json",
+         reviews: "http://api.rottentomatoes.com/api/public/v1.0/movies/771306778/reviews.json",
+         similar: "http://api.rottentomatoes.com/api/public/v1.0/movies/771306778/similar.json"
+         }
+         }
+         ],
+links: {
+self: "http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=Tomorroland&page_limit=30&page=1"
+},
+link_template: "http://api.rottentomatoes.com/api/public/v1.0/movies.json?q={search-term}&page_limit={results-per-page}&page={page-number}"
+}

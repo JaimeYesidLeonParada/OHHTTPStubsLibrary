@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         //OHHTTPManager.sharedInstance.startHermeticServerJSON("", url: "", endPoint:"q=Toy+Story+3",pathForFile: "Incredibles.json")
         
         OHHTTPManager.sharedInstance.startHermeticServerJSONWithContainsURL("q=Toy+Story+3", pathForFile: "Incredibles.json", statusCode: 200)
+        OHHTTPManager.sharedInstance.startHermeticServerJSONWithContainsURL("q=Aladin", pathForFile: "Tomorrowland.json", statusCode: 200)
         
         
        // OHHTTPManager.sharedInstance.startHermeticServerURLImage("http://2.bp.blogspot.com/-rZCJctudjVc/T744Uxgi4gI/AAAAAAAAA8o/PPF2lIoZ4EU/s1600/disney~donaldduck~danetta.png", image: mickey)
@@ -54,6 +55,19 @@ class ViewController: UIViewController {
                 print(data)
             }
         }
+    }
+    @IBAction func downloadTomorroland(sender: AnyObject) {
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=74n8r9ntbuur8j6safugwanp&q=Aladin")!)
+        httpGet(request){
+            (data, error) -> Void in
+            if error != nil {
+                print(error)
+            } else {
+                print(data)
+            }
+        }
+        
     }
     
     func downloadImage(url:NSURL, completion:(UIImage?) -> Void){

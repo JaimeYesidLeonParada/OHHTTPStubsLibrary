@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		05531B3E1B949EB200B61879 /* Incredibles.json in Resources */ = {isa = PBXBuildFile; fileRef = 05531B3D1B949EB200B61879 /* Incredibles.json */; };
 		8407CB77E336673117001D2B /* Pods_OHHTTPHermeticServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A3CAC03F0DD54CDF421BF6 /* Pods_OHHTTPHermeticServer.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		FA07E9C81B9CED9400C8DA7A /* Tomorrowland.json in Resources */ = {isa = PBXBuildFile; fileRef = FA07E9C71B9CED9400C8DA7A /* Tomorrowland.json */; };
+		FA07E9CA1B9CF33700C8DA7A /* CingureHermeticServer.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA07E9C91B9CF33700C8DA7A /* CingureHermeticServer.plist */; };
 		FAC875161B93A4D500D66E17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC875151B93A4D400D66E17 /* AppDelegate.swift */; };
 		FAC875181B93A4D500D66E17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC875171B93A4D500D66E17 /* ViewController.swift */; };
 		FAC8751B1B93A4D500D66E17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC875191B93A4D500D66E17 /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 		22B0F58A7F4B97EFEB2B95EE /* Pods-OHHTTPHermeticServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OHHTTPHermeticServer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OHHTTPHermeticServer/Pods-OHHTTPHermeticServer.debug.xcconfig"; sourceTree = "<group>"; };
 		41A3CAC03F0DD54CDF421BF6 /* Pods_OHHTTPHermeticServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OHHTTPHermeticServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BDCC33DC453764099D84F4 /* Pods-OHHTTPHermeticServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OHHTTPHermeticServer.release.xcconfig"; path = "Pods/Target Support Files/Pods-OHHTTPHermeticServer/Pods-OHHTTPHermeticServer.release.xcconfig"; sourceTree = "<group>"; };
+		FA07E9C71B9CED9400C8DA7A /* Tomorrowland.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Tomorrowland.json; sourceTree = "<group>"; };
+		FA07E9C91B9CF33700C8DA7A /* CingureHermeticServer.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CingureHermeticServer.plist; path = Resources/CingureHermeticServer.plist; sourceTree = "<group>"; };
 		FAC875121B93A4D400D66E17 /* OHHTTPHermeticServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OHHTTPHermeticServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC875151B93A4D400D66E17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC875171B93A4D500D66E17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				05531B3D1B949EB200B61879 /* Incredibles.json */,
+				FA07E9C71B9CED9400C8DA7A /* Tomorrowland.json */,
 				FAC8752B1B93DA6400D66E17 /* Images */,
+				FA07E9C91B9CF33700C8DA7A /* CingureHermeticServer.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -175,7 +181,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA07E9CA1B9CF33700C8DA7A /* CingureHermeticServer.plist in Resources */,
 				FAC8751D1B93A4D500D66E17 /* Assets.xcassets in Resources */,
+				FA07E9C81B9CED9400C8DA7A /* Tomorrowland.json in Resources */,
 				FAC8751B1B93A4D500D66E17 /* Main.storyboard in Resources */,
 				05531B3E1B949EB200B61879 /* Incredibles.json in Resources */,
 			);
