@@ -27,9 +27,12 @@ class ViewController: UIViewController {
         */
         //OHHTTPManager.sharedInstance.startHermeticServerJSON("", url: "", endPoint:"q=Toy+Story+3",pathForFile: "Incredibles.json")
         
-        OHHTTPManager.sharedInstance.startHermeticServerJSONWithContainsURL("q=Toy+Story+3", pathForFile: "Incredibles.json", statusCode: 200)
-        OHHTTPManager.sharedInstance.startHermeticServerJSONWithContainsURL("q=Aladin", pathForFile: "Tomorrowland.json", statusCode: 200)
+        //OHHTTPManager.sharedInstance.startHermeticServerJSONWithContainsURL("q=Toy+Story+3", pathForFile: "Incredibles.json", statusCode: 200)
+        //OHHTTPManager.sharedInstance.startHermeticServerJSONWithContainsURL("q=Aladin", pathForFile: "Tomorrowland.json", statusCode: 200)
         
+        OHHTTPManager.sharedInstance.start()
+        OHHTTPManager.sharedInstance.startHermeticServerJSONWithContainsURL("q=Toy+Story+3", pathForFile: "Incredibles.json", statusCode: 200, requestTime:.DownloadSpeedWifi)
+        OHHTTPManager.sharedInstance.startHermeticServerJSONWithContainsURL("q=Aladin", pathForFile: "Tomorrowland.json", statusCode: 200, requestTime:.DownloadSpeedEDGE)
         
        // OHHTTPManager.sharedInstance.startHermeticServerURLImage("http://2.bp.blogspot.com/-rZCJctudjVc/T744Uxgi4gI/AAAAAAAAA8o/PPF2lIoZ4EU/s1600/disney~donaldduck~danetta.png", image: mickey)
         
