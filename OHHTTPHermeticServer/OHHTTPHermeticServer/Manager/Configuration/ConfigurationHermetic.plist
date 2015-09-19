@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>enableAll</key>
-	<true/>
 	<key>request</key>
 	<array>
 		<dict>
@@ -20,24 +18,23 @@
 			<key>path</key>
 			<string>Incredibles.json</string>
 			<key>enable</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>url</key>
+			<string></string>
+			<key>endPoint</key>
+			<string></string>
+			<key>contains</key>
+			<string>q=Aladin</string>
+			<key>status</key>
+			<integer>200</integer>
+			<key>downloadSpeed</key>
+			<integer>-1500</integer>
+			<key>path</key>
+			<string>Tomorrowland.json</string>
+			<key>enable</key>
 			<true/>
-			<key>environment</key>
-			<dict>
-				<key>enviroment1</key>
-				<dict>
-					<key>url</key>
-					<string></string>
-					<key>enable</key>
-					<false/>
-				</dict>
-				<key>enviroment2</key>
-				<dict>
-					<key>url</key>
-					<string></string>
-					<key>enable</key>
-					<false/>
-				</dict>
-			</dict>
 		</dict>
 	</array>
 </dict>

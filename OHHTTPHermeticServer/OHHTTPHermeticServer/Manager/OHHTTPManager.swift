@@ -9,13 +9,13 @@
 import UIKit
 import OHHTTPStubs
 
-public enum DownloadSpeed  : Double {
-    case DownloadSpeedGPRS =    -7
-    case DownloadSpeedEDGE =    -16
-    case DownloadSpeed3G =      -400
-    case DownloadSpeed3GPlus =  -900
-    case DownloadSpeedWifi =    -1500
-}
+
+let DownloadSpeedGPRS : Double  =   -7
+let DownloadSpeedEDGE : Double =    -16
+let DownloadSpeed3G : Double =      -400
+let DownloadSpeed3GPlus : Double =  -900
+let DownloadSpeedWifi : Double   =  -1500
+
 
 class OHHTTPManager: NSObject {
     
@@ -27,18 +27,22 @@ class OHHTTPManager: NSObject {
     {
         OHHTTPStubs.setEnabled(true)
         
-        
-        var configurationHermetic: NSDictionary?
-        
         let path = NSBundle.mainBundle().pathForResource("ConfigurationHermetic", ofType: "plist")
+        let configurationHermetic: NSDictionary = NSDictionary(contentsOfFile: path!)!
+        let requests = configurationHermetic.objectForKey("request") as! NSArray
         
-        configurationHermetic = NSDictionary(contentsOfFile: path!)
-        
-        print("Configuration: \(configurationHermetic)");
+        for request in requests
+        {
+            let enable = request.objectForKey("enable") as! Bool
             
-        
-        
-        
+            if enable == true
+            {
+                let statusCode = request.objectForKey("status") as! NSNumber
+                let downloadSpeed = request.objectForKey("downloadSpeed") as! NSNumber
+                
+                self.startHermeticServerJSONWithContainsURL(request.objectForKey("contains") as! String, pathForFile: request.objectForKey("path") as! String, statusCode: statusCode.intValue, downloadSpeed:downloadSpeed.doubleValue)
+            }
+        }
     }
     
     func stop()
@@ -47,7 +51,7 @@ class OHHTTPManager: NSObject {
     }
     
     //MARK:Private General Hermetic---
-    private func startHermeticServer(url:String, endPoint:String ,data:NSData, requestTime:DownloadSpeed)
+    private func startHermeticServer(url:String, endPoint:String ,data:NSData, downloadSpeed:Double, requestTime:Double, responseTime:Double)
     {
         OHHTTPStubs.stubRequestsPassingTest({(request: NSURLRequest!) in
             
@@ -67,30 +71,30 @@ class OHHTTPManager: NSObject {
             
             }, withStubResponse: { _ in
                 
-                return OHHTTPStubsResponse(data: data, statusCode:200, headers:nil).responseTime(requestTime.rawValue)
+                return OHHTTPStubsResponse(data: data, statusCode:200, headers:nil).responseTime(downloadSpeed)
         })
     }
     
     //MARK:URL---
-    func startHermeticServerURLData(url:String, data:NSData ,requestTime:DownloadSpeed)
+    func startHermeticServerURLData(url:String, data:NSData ,downloadSpeed:Double)
     {
-        self.startHermeticServer(url, endPoint: "",data: data, requestTime:requestTime)
+        self.startHermeticServer(url, endPoint: "",data: data, downloadSpeed:downloadSpeed, requestTime:0, responseTime:0)
     }
     
-    func startHermeticServerURLString(url:String, string:String ,requestTime:DownloadSpeed)
+    func startHermeticServerURLString(url:String, string:String ,downloadSpeed:Double)
     {
         let data : NSData = string.dataUsingEncoding(NSUTF8StringEncoding)!
-        self.startHermeticServer(url, endPoint: "", data: data, requestTime:requestTime)
+        self.startHermeticServer(url, endPoint: "", data: data, downloadSpeed:downloadSpeed, requestTime:0, responseTime:0)
     }
     
-    func startHermeticServerURLImage(url:String, image:UIImage ,requestTime:DownloadSpeed)
+    func startHermeticServerURLImage(url:String, image:UIImage ,downloadSpeed:Double)
     {
         let data : NSData = UIImageJPEGRepresentation(image, 1.0)!
-        self.startHermeticServer(url, endPoint: "",data: data , requestTime:requestTime)
+        self.startHermeticServer(url, endPoint: "",data: data , downloadSpeed:downloadSpeed, requestTime:0, responseTime:0)
     }
     
     //MARK:URL---
-    private func startHermeticServerJSON(url:String, endPoint:String, containsURL:String, pathForFile:String, statusCode: Int32, requestTime:DownloadSpeed)
+    private func startHermeticServerJSON(url:String, endPoint:String, containsURL:String, pathForFile:String, statusCode: Int32, downloadSpeed:Double)
     {
         OHHTTPStubs.stubRequestsPassingTest({(request: NSURLRequest!) in
             
@@ -115,23 +119,23 @@ class OHHTTPManager: NSObject {
             
             }, withStubResponse: { _ in
                 let stubPath = OHPathForFile(pathForFile, self.dynamicType)
-                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: statusCode, headers: ["Content-Type":"application/json"]).responseTime(requestTime.rawValue)
+                return OHHTTPStubsResponse(fileAtPath: stubPath!, statusCode: statusCode, headers: ["Content-Type":"application/json"]).responseTime(downloadSpeed)
         })
     }
     
-    func startHermeticServerJSONWithURL(url:String, pathForFile:String, statusCode:Int32, requestTime:DownloadSpeed)
+    func startHermeticServerJSONWithURL(url:String, pathForFile:String, statusCode:Int32, downloadSpeed:Double)
     {
-        self.startHermeticServerJSON(url, endPoint: "", containsURL: "", pathForFile: pathForFile, statusCode: statusCode, requestTime:requestTime)
+        self.startHermeticServerJSON(url, endPoint: "", containsURL: "", pathForFile: pathForFile, statusCode: statusCode, downloadSpeed:downloadSpeed)
     }
     
-    func startHermeticServerJSONWithEndpoint(endPoint:String, pathForFile:String, statusCode:Int32, requestTime:DownloadSpeed)
+    func startHermeticServerJSONWithEndpoint(endPoint:String, pathForFile:String, statusCode:Int32, downloadSpeed:Double)
     {
-        self.startHermeticServerJSON("", endPoint: endPoint, containsURL: "", pathForFile: pathForFile, statusCode: statusCode, requestTime:requestTime)
+        self.startHermeticServerJSON("", endPoint: endPoint, containsURL: "", pathForFile: pathForFile, statusCode: statusCode, downloadSpeed:downloadSpeed)
     }
     
-    func startHermeticServerJSONWithContainsURL(containsURL:String, pathForFile:String, statusCode:Int32, requestTime:DownloadSpeed)
+    func startHermeticServerJSONWithContainsURL(containsURL:String, pathForFile:String, statusCode:Int32, downloadSpeed:Double)
     {
-        self.startHermeticServerJSON("", endPoint: "", containsURL: containsURL, pathForFile: pathForFile, statusCode: statusCode, requestTime:requestTime)
+        self.startHermeticServerJSON("", endPoint: "", containsURL: containsURL, pathForFile: pathForFile, statusCode: statusCode, downloadSpeed:downloadSpeed)
     }
     
     
