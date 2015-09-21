@@ -18,7 +18,7 @@
 			<key>path</key>
 			<string>Incredibles.json</string>
 			<key>enable</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>url</key>
@@ -30,7 +30,7 @@
 			<key>status</key>
 			<integer>200</integer>
 			<key>downloadSpeed</key>
-			<integer>-1500</integer>
+			<integer>-7</integer>
 			<key>path</key>
 			<string>Tomorrowland.json</string>
 			<key>enable</key>
