@@ -11,6 +11,8 @@
 		05C2BB871BB2F82100712513 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C2BB861BB2F82100712513 /* ImageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		05C2BB8A1BB2F8FD00712513 /* JsonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C2BB891BB2F8FD00712513 /* JsonViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		05C2BB8D1BB3302900712513 /* RequestDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C2BB8C1BB3302900712513 /* RequestDownload.swift */; settings = {ASSET_TAGS = (); }; };
+		05C2BB8F1BB3B1CB00712513 /* kingLion.json in Resources */ = {isa = PBXBuildFile; fileRef = 05C2BB8E1BB3B1CB00712513 /* kingLion.json */; settings = {ASSET_TAGS = (); }; };
+		05C2BB911BB3B42600712513 /* intensamente.json in Resources */ = {isa = PBXBuildFile; fileRef = 05C2BB901BB3B42600712513 /* intensamente.json */; settings = {ASSET_TAGS = (); }; };
 		681CC0DF1BADD71C00338F90 /* ConfigurationHermetic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 681CC0DE1BADD71C00338F90 /* ConfigurationHermetic.plist */; settings = {ASSET_TAGS = (); }; };
 		8407CB77E336673117001D2B /* Pods_OHHTTPHermeticServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A3CAC03F0DD54CDF421BF6 /* Pods_OHHTTPHermeticServer.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FA07E9C81B9CED9400C8DA7A /* Tomorrowland.json in Resources */ = {isa = PBXBuildFile; fileRef = FA07E9C71B9CED9400C8DA7A /* Tomorrowland.json */; };
@@ -26,6 +28,8 @@
 		05C2BB861BB2F82100712513 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageViewController.swift; path = TabBarController/ImageViewController.swift; sourceTree = "<group>"; };
 		05C2BB891BB2F8FD00712513 /* JsonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonViewController.swift; path = TabBarController/JsonViewController.swift; sourceTree = "<group>"; };
 		05C2BB8C1BB3302900712513 /* RequestDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestDownload.swift; path = Request/RequestDownload.swift; sourceTree = "<group>"; };
+		05C2BB8E1BB3B1CB00712513 /* kingLion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kingLion.json; sourceTree = "<group>"; };
+		05C2BB901BB3B42600712513 /* intensamente.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = intensamente.json; sourceTree = "<group>"; };
 		22B0F58A7F4B97EFEB2B95EE /* Pods-OHHTTPHermeticServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OHHTTPHermeticServer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OHHTTPHermeticServer/Pods-OHHTTPHermeticServer.debug.xcconfig"; sourceTree = "<group>"; };
 		41A3CAC03F0DD54CDF421BF6 /* Pods_OHHTTPHermeticServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OHHTTPHermeticServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		681CC0DE1BADD71C00338F90 /* ConfigurationHermetic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ConfigurationHermetic.plist; path = Manager/Configuration/ConfigurationHermetic.plist; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 		FAC8752A1B93DA5B00D66E17 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				05C2BB901BB3B42600712513 /* intensamente.json */,
+				05C2BB8E1BB3B1CB00712513 /* kingLion.json */,
 				05531B3D1B949EB200B61879 /* Incredibles.json */,
 				FA07E9C71B9CED9400C8DA7A /* Tomorrowland.json */,
 				FAC8752B1B93DA6400D66E17 /* Images */,
@@ -220,10 +226,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05C2BB8F1BB3B1CB00712513 /* kingLion.json in Resources */,
 				681CC0DF1BADD71C00338F90 /* ConfigurationHermetic.plist in Resources */,
 				FAC8751D1B93A4D500D66E17 /* Assets.xcassets in Resources */,
 				FA07E9C81B9CED9400C8DA7A /* Tomorrowland.json in Resources */,
 				FAC8751B1B93A4D500D66E17 /* Main.storyboard in Resources */,
+				05C2BB911BB3B42600712513 /* intensamente.json in Resources */,
 				05531B3E1B949EB200B61879 /* Incredibles.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

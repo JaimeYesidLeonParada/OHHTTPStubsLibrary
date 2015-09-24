@@ -8,9 +8,10 @@
 
 import UIKit
 
-class JsonViewController: UIViewController , UITableViewDelegate, UITableViewDataSource
+class JsonViewController: UIViewController , UITableViewDelegate, UITableViewDataSource ,UITextFieldDelegate
 {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var textField: UITextField!
     
     var movies : NSArray! = []
     
@@ -21,6 +22,7 @@ class JsonViewController: UIViewController , UITableViewDelegate, UITableViewDat
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.textField.delegate = self
     }
     
     //MARK:Actions---
@@ -37,10 +39,20 @@ class JsonViewController: UIViewController , UITableViewDelegate, UITableViewDat
         }
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        self.searchMovies(UIButton.init())
+        return true
+    }
     
     @IBAction func searchMovies(sender: UIButton)
     {
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=74n8r9ntbuur8j6safugwanp&q=Disney")!)
+        let query : String = self.textField.text!.lowercaseString
+        
+        let requestString = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=74n8r9ntbuur8j6safugwanp&q=" + query.stringByReplacingOccurrencesOfString(" ", withString: "+")
+        
+         let request = NSMutableURLRequest(URL: NSURL(string:requestString)!)
         
         self.movies = []
         self.tableView.reloadData()
@@ -60,8 +72,6 @@ class JsonViewController: UIViewController , UITableViewDelegate, UITableViewDat
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         self.tableView.reloadData()
                     })
-                    
-                    //self.tableView.reloadData()
                     print("dictionary: \(self.movies)")
                 }
                 catch
@@ -97,7 +107,8 @@ class JsonViewController: UIViewController , UITableViewDelegate, UITableViewDat
         let valueDict : NSDictionary = self.movies[indexPath.row] as! NSDictionary
         
         cell.textLabel?.text = (valueDict.objectForKey("title") as! String)
-        
+        cell.textLabel!.numberOfLines = 0;
+                
         let posters : NSDictionary = valueDict.objectForKey("posters") as! NSDictionary
         
         let urlThumbnail = NSURL(string: posters.objectForKey("thumbnail") as! String)

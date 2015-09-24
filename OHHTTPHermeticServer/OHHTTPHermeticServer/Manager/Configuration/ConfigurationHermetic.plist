@@ -36,6 +36,38 @@
 			<key>enable</key>
 			<true/>
 		</dict>
+		<dict>
+			<key>url</key>
+			<string></string>
+			<key>endPoint</key>
+			<string></string>
+			<key>contains</key>
+			<string>q=el+rey+leon</string>
+			<key>status</key>
+			<integer>200</integer>
+			<key>downloadSpeed</key>
+			<integer>-7</integer>
+			<key>path</key>
+			<string>kingLion.json</string>
+			<key>enable</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>url</key>
+			<string></string>
+			<key>endPoint</key>
+			<string></string>
+			<key>contains</key>
+			<string>q=intensamente</string>
+			<key>status</key>
+			<integer>200</integer>
+			<key>downloadSpeed</key>
+			<integer>-1500</integer>
+			<key>path</key>
+			<string>intensamente.json</string>
+			<key>enable</key>
+			<true/>
+		</dict>
 	</array>
 </dict>
 </plist>

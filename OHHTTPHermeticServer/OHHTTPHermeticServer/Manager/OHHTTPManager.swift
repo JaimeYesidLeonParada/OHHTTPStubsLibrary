@@ -66,7 +66,7 @@ class OHHTTPManager: NSObject {
                     }
                     else
                     {
-                        self.startHermeticServerJSONWithContainsURL(contains, pathForFile: request.objectForKey("path") as! String, statusCode: statusCode.intValue, downloadSpeed:downloadSpeed.doubleValue)
+                        self.startHermeticServerJSONWithContainsURL(contains.lowercaseString, pathForFile: request.objectForKey("path") as! String, statusCode: statusCode.intValue, downloadSpeed:downloadSpeed.doubleValue)
                         
                     }
                 }
