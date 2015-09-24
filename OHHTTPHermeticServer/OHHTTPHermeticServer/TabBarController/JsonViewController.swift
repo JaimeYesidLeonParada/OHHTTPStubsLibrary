@@ -72,7 +72,7 @@ class JsonViewController: UIViewController , UITableViewDelegate, UITableViewDat
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         self.tableView.reloadData()
                     })
-                    print("dictionary: \(self.movies)")
+                    //print("dictionary: \(self.movies)")
                 }
                 catch
                 {

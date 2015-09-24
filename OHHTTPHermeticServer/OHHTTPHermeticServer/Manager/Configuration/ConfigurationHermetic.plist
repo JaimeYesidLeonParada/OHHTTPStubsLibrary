@@ -14,23 +14,7 @@
 			<key>status</key>
 			<integer>200</integer>
 			<key>downloadSpeed</key>
-			<integer>-1500</integer>
-			<key>path</key>
-			<string>Incredibles.json</string>
-			<key>enable</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>url</key>
-			<string></string>
-			<key>endPoint</key>
-			<string></string>
-			<key>contains</key>
-			<string>q=Aladin</string>
-			<key>status</key>
-			<integer>200</integer>
-			<key>downloadSpeed</key>
-			<integer>-7</integer>
+			<real>-1500</real>
 			<key>path</key>
 			<string>Tomorrowland.json</string>
 			<key>enable</key>

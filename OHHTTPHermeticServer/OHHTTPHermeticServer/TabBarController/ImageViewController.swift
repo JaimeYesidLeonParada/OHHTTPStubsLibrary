@@ -39,9 +39,8 @@ class ImageViewController: UIViewController {
         let urlGoofy = NSURL(string: "http://www.c1n3.org/GENEROS/DIBUJOS_ANIMADOS/goofy01/Images/1932%20Goofy%2001.jpg")
         let urlLilo = NSURL(string: "http://img11.deviantart.net/0a71/i/2007/336/f/e/lilo_and_stitch_by_fquihuis.jpg")
         let urlTimon = NSURL(string: "http://img10.deviantart.net/97f7/i/2009/026/a/7/timon___lion_king_by_golden_hill.jpg")
-        
+            
         self.spinner1.startAnimating()
-        self.image1.image = nil;
         downloadImage(urlMickey!) { (image) -> Void in
             self.image1.image = image
             self.spinner1.stopAnimating()
