@@ -10,7 +10,7 @@
 			<key>endPoint</key>
 			<string></string>
 			<key>contains</key>
-			<string>q=Toy+Story+3</string>
+			<string>q=Disney</string>
 			<key>status</key>
 			<integer>200</integer>
 			<key>downloadSpeed</key>
