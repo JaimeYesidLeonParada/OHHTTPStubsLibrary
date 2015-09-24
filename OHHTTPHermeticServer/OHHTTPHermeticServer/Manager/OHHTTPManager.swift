@@ -40,9 +40,18 @@ class OHHTTPManager: NSObject {
     {
         let path = NSBundle.mainBundle().pathForResource("ConfigurationHermetic", ofType: "plist")
         let configurationHermetic: NSDictionary = NSDictionary(contentsOfFile: path!)!
-        let requests = configurationHermetic.objectForKey("request") as! NSArray
+        let json = configurationHermetic.objectForKey("json") as! NSArray
+        let images = configurationHermetic.objectForKey("images") as! NSArray
         
-        for request in requests
+        self.configurationFilesJSON(json)
+        self.configurationImages(images)
+        
+    }
+    
+    //MARK:Configuration JSON Files
+    private func configurationFilesJSON(json:NSArray)
+    {
+        for request in json
         {
             let enable = request.objectForKey("enable") as! Bool
             
@@ -53,7 +62,6 @@ class OHHTTPManager: NSObject {
                 let url = request.objectForKey("url") as! String
                 let contains = request.objectForKey("contains") as! String
                 let endPoint = request.objectForKey("endPoint") as! String
-                
                 
                 if url.isEmpty
                 {
@@ -67,17 +75,36 @@ class OHHTTPManager: NSObject {
                     else
                     {
                         self.startHermeticServerJSONWithContainsURL(contains.lowercaseString, pathForFile: request.objectForKey("path") as! String, statusCode: statusCode.intValue, downloadSpeed:downloadSpeed.doubleValue)
-                        
                     }
                 }
                 else
                 {
                     self.startHermeticServerJSONWithURL(url, pathForFile: request.objectForKey("path") as! String, statusCode: statusCode.intValue, downloadSpeed: downloadSpeed.doubleValue)
-                    
                 }
             }
         }
-        
+    }
+    
+    //MARK:Configuration Images
+    private func configurationImages(images:NSArray)
+    {
+        for request in images
+        {
+            let enable = request.objectForKey("enable") as! Bool
+            
+            if enable == true
+            {
+                let downloadSpeed = request.objectForKey("downloadSpeed") as! NSNumber
+                let url = request.objectForKey("url") as! String
+                let name = request.objectForKey("name") as! String
+                
+                if !url.isEmpty
+                {
+                    let image : UIImage = UIImage(named: name)!
+                    self.startHermeticServerURLImage(url, image: image, downloadSpeed: downloadSpeed.doubleValue)
+                }
+            }
+        }
     }
     
     

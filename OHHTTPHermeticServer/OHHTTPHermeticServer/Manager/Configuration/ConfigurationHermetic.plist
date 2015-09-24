@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>request</key>
+	<key>json</key>
 	<array>
 		<dict>
 			<key>url</key>
@@ -67,6 +67,69 @@
 			<string>intensamente.json</string>
 			<key>enable</key>
 			<true/>
+		</dict>
+	</array>
+	<key>images</key>
+	<array>
+		<dict>
+			<key>url</key>
+			<string>http://images.clipartpanda.com/baby-mickey-mouse-clipart-black-and-white-4Tb4o8KGc.gif</string>
+			<key>downloadSpeed</key>
+			<real>-1500</real>
+			<key>name</key>
+			<string>mickey</string>
+			<key>enable</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>url</key>
+			<string>http://vignette4.wikia.nocookie.net/kingdomhearts/images/e/e6/Retro_Donald.png/revision/latest?cb=20131030025830</string>
+			<key>downloadSpeed</key>
+			<real>-1500</real>
+			<key>name</key>
+			<string>donald</string>
+			<key>enable</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>url</key>
+			<string>http://www.coloring-for-kids.net/wp-content/gallery/dumbo/coloriage-dumbo-5.gif</string>
+			<key>downloadSpeed</key>
+			<real>-1500</real>
+			<key>name</key>
+			<string>dumbo</string>
+			<key>enable</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>url</key>
+			<string>http://www.c1n3.org/GENEROS/DIBUJOS_ANIMADOS/goofy01/Images/1932%20Goofy%2001.jpg</string>
+			<key>downloadSpeed</key>
+			<real>-1500</real>
+			<key>name</key>
+			<string>goofy</string>
+			<key>enable</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>url</key>
+			<string>http://img11.deviantart.net/0a71/i/2007/336/f/e/lilo_and_stitch_by_fquihuis.jpg</string>
+			<key>downloadSpeed</key>
+			<real>-1500</real>
+			<key>name</key>
+			<string>lilo</string>
+			<key>enable</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>url</key>
+			<string>http://img10.deviantart.net/97f7/i/2009/026/a/7/timon___lion_king_by_golden_hill.jpg</string>
+			<key>downloadSpeed</key>
+			<real>-1500</real>
+			<key>name</key>
+			<string>timon</string>
+			<key>enable</key>
+			<false/>
 		</dict>
 	</array>
 </dict>
